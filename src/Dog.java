@@ -36,16 +36,20 @@ public class Dog {
      * Note: y increases going down - weird but true!
      */
     public boolean isSelected(int x, int y) {
-        boolean isSelected = (rightEdge() > x && leftEdge() < x) && (topEdge() > y && bottomEdge() < y);
-        return isSelected;
-    }
+        if(rightEdge() >= x && leftEdge() <= x){
+            if(topEdge() >= y && bottomEdge() <= y);
+            return true;
+        }
+    
+    return false;
+}
 
     /* Returns the location of the right edge of the dog object */
     /* Call this is your isSelected method to tell you the right edge of the dog.
      * To find the width of the image, use "theNameOfYourPImageVariable.width"
      */
     private float rightEdge(){
-        float rightEdge = x + size;
+        float rightEdge = x + img.width;
         return rightEdge;
         //TODO: return the location of the right edge of the dog
     }
@@ -69,7 +73,7 @@ public class Dog {
      * To find the height of the image, use "theNameOfYourPImageVariable.height
      */
     private float bottomEdge(){
-        float bottomEdge = y + size;
+        float bottomEdge = y + img.height;
         return bottomEdge;
         //TODO: return the location of the bottom edge of the dog  
     }

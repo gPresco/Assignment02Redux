@@ -39,8 +39,10 @@ public class MySketch extends PApplet {
 
     /* This methos is called every time the mouse is pressed */
     public void mousePressed() {
-        if(dog.isSelected(mouseX, mouseY)){
-            dog.draw();
+        if(dog.isSelected(mouseX, mouseY) == true){
+            dog = new Dog(this, width, height);
+        }
+            
         // TODO: call the dog object's method that figures out of the mouse was pressed on the dog object.
         // Passing in the mouse's x and y position so it can do its job.
 
@@ -51,7 +53,7 @@ public class MySketch extends PApplet {
         // It's called garbage collection.
         }
         }    
-    }
+    
 
 
 
