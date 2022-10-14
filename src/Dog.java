@@ -14,21 +14,19 @@ public class Dog {
     private PImage img;         
     private float x;
     private float y;
-    private float size;
     
 
     /* Assign values to all the instance variables in the constructor */
     public Dog(PApplet mySketch, int screenWidth, int screenHeight) {
         this.mySketch = mySketch;
         img = mySketch.loadImage("assets/dog.png");
-        x =  mySketch.random(screenWidth - size) + size;
-        y =  mySketch.random(screenHeight - size) + size;
-        size = 50;
+        x =  mySketch.random(screenWidth - img.width);
+        y =  mySketch.random(screenHeight - img.height);
     }
 
     /* Draws the dog */
     public void draw() {
-        mySketch.image(img, x, y, size, size);
+        mySketch.image(img, x, y, img.width, img.height);
     }
 
     /* Test to see of the x and y location parameters are inside the dog's boundaries */
@@ -51,22 +49,20 @@ public class Dog {
     private float rightEdge(){
         float rightEdge = x + img.width;
         return rightEdge;
-        //TODO: return the location of the right edge of the dog
     }
     /* Returns the location of the left edge of the dog object */
     /* Call this is your isSelected method to tell you the left edge of the dog */
     private float leftEdge(){
         float leftEdge = x;
         return leftEdge;
-        //TODO: return the location of the left edge of the dog
+        
         
     }
     /* Returns the location of the top edge of the dog object */
     /* Call this is your isSelected method to tell you the top edge of the dog. */
     private float topEdge(){
         float topEdge = y;
-        return topEdge;
-        //TODO: return the location of the top edge of the dog   
+        return topEdge; 
     }
     /* Returns the location of the top edge of the dog object */
     /* Call this is your isSelected method to tell you the bottom edge of the dog.
@@ -74,7 +70,6 @@ public class Dog {
      */
     private float bottomEdge(){
         float bottomEdge = y + img.height;
-        return bottomEdge;
-        //TODO: return the location of the bottom edge of the dog  
+        return bottomEdge; 
     }
 }
